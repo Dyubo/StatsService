@@ -23,7 +23,7 @@ public class StatsService {
 
         return sum;
     }
-
+//values.length = 12.
     public int AverageSellPerMonth(int[] values) {
         int averagePerMonth = StatsServiceSumImrove(values) / values.length;
         return averagePerMonth;
