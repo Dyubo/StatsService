@@ -2,7 +2,7 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int CalculateSum(int[] values) {
+    public int calculateSum(int[] values) {
         int month = 0;
         int sum = 0;
         for (int value : values) {
@@ -13,23 +13,13 @@ public class StatsService {
         return sum;
     }
 
-    public int StatsServiceSumImrove(int[] values) {
-        int month = 0;
-        int sum = 0;
-        for (int value : values) {
-            sum += value;
-            month = month + 1;
-        }
-
-        return sum;
-    }
-//values.length = 12.
-    public int AverageSellPerMonth(int[] values) {
-        int averagePerMonth = StatsServiceSumImrove(values) / values.length;
+    //values.length = 12.
+    public int averageSellPerMonth(int[] values) {
+        int averagePerMonth = calculateSum(values) / values.length;
         return averagePerMonth;
     }
 
-    public int MaxPeakSales(int[] values) {
+    public int maxPeakSales(int[] values) {
         int currentMax = values[0];
         int month = 0;
         int maxSales = 0;
@@ -44,7 +34,7 @@ public class StatsService {
         return maxSales;
     }
 
-    public int MinPeakSales(int[] values) {
+    public int minPeakSales(int[] values) {
         int currentMax = values[0];
         int month = 0;
         int maxSales = 0;
@@ -59,9 +49,9 @@ public class StatsService {
         return maxSales;
     }
 
-    public int BelowTheAverage(int[] values) {
+    public int belowTheAverage(int[] values) {
         int month = 0;
-        int maxInMonth = AverageSellPerMonth(values);
+        int maxInMonth = averageSellPerMonth(values);
         for (int value : values) {
 
             if (value < maxInMonth) {
@@ -72,9 +62,9 @@ public class StatsService {
         return month;
     }
 
-    public int AboveTheAverage(int[] values) {
+    public int aboveTheAverage(int[] values) {
         int month = 0;
-        int maxInMonth = AverageSellPerMonth(values);
+        int maxInMonth = averageSellPerMonth(values);
         for (int value : values) {
 
             if (value > maxInMonth) {
